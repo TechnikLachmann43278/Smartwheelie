@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+<!--    <TextView
+        android:id="@+id/text_uuid"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="UUID" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="MAC Adresse des Bluetooth Devices:" />-->
+
+    <EditText
+        android:id="@+id/text_adresse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="20:15:02:28:12:80" >
+    </EditText>
+
+
+
+    <!--<TextView-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Eingabe:" />-->
+
+    <!--<EditText-->
+    <!--android:id="@+id/text_eingabe"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:ems="10"-->
+    <!--android:text="Test 123" >-->
+
+    <!--<requestFocus />-->
+    <!--</EditText>-->
+
+    <!--    <Button
+            android:id="@+id/bt_senden"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="senden"
+            android:text="Senden" />-->
+
+    <!--    <Button
+            android:id="@+id/bt_empfangen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="empfangen"
+            android:text="Empfangen" />-->
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center|top"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/bt_verbinden"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="verbinden"
+                android:text="Verbinden" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/bt_trennen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="trennen"
+                android:text="Trennen" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ToggleButton
+        android:id="@+id/arduinoled"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textOn="ON"
+        android:textOff="OFF" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|top"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                android:text="Kp:"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/kpText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginTop="0dp"
+                android:text="0.0"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <SeekBar android:id="@+id/seekBar1"
+        android:max="3000"
+        android:progress="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"></SeekBar>
+    <!--android:layout_below="@+id/seekBar1"-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|top"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Kd:"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/kdText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginTop="5dp"
+                android:text="0.0"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <SeekBar android:id="@+id/seekBar2"
+        android:max="100"
+        android:progress="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="5dp"></SeekBar>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|top"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Kpwm:"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/kpwmText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginTop="5dp"
+                android:text="0.0"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <SeekBar android:id="@+id/seekBar4"
+        android:max="1000"
+        android:progress="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="5dp"></SeekBar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|top"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Ko:"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/koText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginTop="5dp"
+                android:text="0.0"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <SeekBar android:id="@+id/seekBar0"
+        android:max="3000"
+        android:progress="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="5dp"></SeekBar>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:text="Phisoll:"
+        android:textSize="10dp" />
+
+    <SeekBar android:id="@+id/seekBar3"
+        android:max="6000"
+        android:progress="3000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="5dp"></SeekBar>
+    <TextView
+        android:id="@+id/samplest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:text="0.0"
+        android:textSize="10dp" />
+
+
+    <TextView
+        android:id="@+id/phi_z"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:text="0.0"
+        android:textSize="10dp" />
+
+    <TextView
+        android:id="@+id/pwm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:text="0.0"
+        android:textSize="10dp" />
+    <TextView
+        android:id="@+id/omegarad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:text="0.0"
+        android:textSize="10dp" />
+
+<!--    <TextView
+        android:id="@+id/pwmText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:text="0.0"
+        android:textSize="10dp" />-->
+
+
+
+</LinearLayout>
